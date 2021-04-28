@@ -4,11 +4,9 @@ package com.yyx.controller;
 import com.yyx.entity.Student;
 import com.yyx.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -25,9 +23,16 @@ import java.util.List;
 public class StudentController {
     @Autowired
     private StudentService studentService;
+
     @GetMapping("/list")
-    public List<Student> list(){
+    public List<Student> list() {
         return this.studentService.list();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public boolean delete(@PathVariable("id") Integer id) {
+        System.out.println(id);
+        return studentService.removeById(id);
     }
 }
 
