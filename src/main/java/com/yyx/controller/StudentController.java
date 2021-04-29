@@ -32,7 +32,11 @@ public class StudentController {
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable("id") Integer id) {
         System.out.println(id);
-        return studentService.removeById(id);
+        return this.studentService.removeById(id);
+    }
+    @GetMapping("/find/{id}")
+    public Student findById(@PathVariable("id") Integer id){
+        return this.studentService.getById(id);
     }
 }
 
