@@ -38,5 +38,13 @@ public class StudentController {
     public Student findById(@PathVariable("id") Integer id){
         return this.studentService.getById(id);
     }
+    @PutMapping("/update")
+    public boolean update(@RequestBody Student student){
+        return studentService.updateById(student);
+    }
+    @PostMapping("/insert")
+    public boolean insert(@RequestBody Student student){
+        return studentService.save(student);
+    }
 }
 
