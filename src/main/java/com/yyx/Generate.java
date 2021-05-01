@@ -45,7 +45,7 @@ public class Generate {
         //策略配置
         StrategyConfig strategyConfig = new StrategyConfig();
         //表名字
-        strategyConfig.setInclude("student","teacher");
+        strategyConfig.setInclude("student","teacher","supermarket");
         //映射表名和字段名，underline_to_camel下划线转驼峰
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);
